@@ -145,9 +145,11 @@ class CalculatorScreenState extends State<CalculatorScreen> {
                             RoundIconButton(
                                 icon: FontAwesomeIcons.minus,
                                 onPressed: () {
-                                  setState(() {
-                                    weight--;
-                                  });
+                                  if (weight > 0) {
+                                    setState(() {
+                                      weight--;
+                                    });
+                                  }
                                 }),
                             SizedBox(
                               width: 10.0,
@@ -155,9 +157,11 @@ class CalculatorScreenState extends State<CalculatorScreen> {
                             RoundIconButton(
                               icon: FontAwesomeIcons.plus,
                               onPressed: () {
-                                setState(() {
-                                  weight++;
-                                });
+                                if (weight < 200) {
+                                  setState(() {
+                                    weight++;
+                                  });
+                                }
                               },
                             ),
                           ],
@@ -186,11 +190,11 @@ class CalculatorScreenState extends State<CalculatorScreen> {
                             RoundIconButton(
                               icon: FontAwesomeIcons.minus,
                               onPressed: () {
-                                setState(
-                                  () {
+                                if (age > 0) {
+                                  setState(() {
                                     age--;
-                                  },
-                                );
+                                  });
+                                }
                               },
                             ),
                             SizedBox(
@@ -199,9 +203,11 @@ class CalculatorScreenState extends State<CalculatorScreen> {
                             RoundIconButton(
                                 icon: FontAwesomeIcons.plus,
                                 onPressed: () {
-                                  setState(() {
-                                    age++;
-                                  });
+                                  if (age < 100) {
+                                    setState(() {
+                                      age++;
+                                    });
+                                  }
                                 })
                           ],
                         )
